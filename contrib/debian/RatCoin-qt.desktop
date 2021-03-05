@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Glovecoin
+Comment=Glovecoin P2P Cryptocurrency
+Exec=/usr/bin/Glovecoin-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/Glovecoin;
+Categories=Office;
+Name[en_US]=Glovecoin-qt.desktop

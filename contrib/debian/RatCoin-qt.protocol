@@ -1,0 +1,11 @@
+[Protocol]
+exec=Glovecoin-qt '%u'
+protocol=Glovecoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

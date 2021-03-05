@@ -1,0 +1,2 @@
+debian/bin/Glovecoind usr/bin
+src/Glovecoind usr/lib/Glovecoin
