@@ -35,7 +35,8 @@ RUN apt-get install -y git \
             libboost-all-dev \
             libqrencode-dev \
             libminiupnpc-dev \
-            miniupnpc
+            miniupnpc \
+            nano
 
 # ===============================================================================
 # Set working directory
