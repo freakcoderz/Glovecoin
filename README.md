@@ -30,3 +30,43 @@ in this manner will have their corresponding issue labeled 'stagnant'.
 Issues with no commits will be given a similar warning, and closed after
 15 days from their last activity. Issues closed in this manner will be 
 labeled 'stale'.
+
+## Docker
+[Instructions for installing docker](https://www.docker.com/community-edition).
+
+First, build the image.
+```
+# Git clone this repo
+https://github.com/freakcoderz/Glovecon.git
+
+# go to the same directory Dockerfile exists
+cd Glovecoin
+# Build the container and tag it with a usable name + version
+docker build -t glovecoind:v1.0.0 .
+```
+
+You should see logs similar to below. This takes a while, as it is provisioning the image by installing dependencies and building the Glovecoin binary.
+```
+Sending build context to Docker daemon  156.4MB
+
+Step 1/12 : FROM ubuntu:16.04
+
+..............
+
+Removing intermediate container 20bf170af587
+
+Successfully built 347a6416af66
+Successfully built glovecoind:v1.0.0
+```
+
+Then, copy the unique identifier built by Docker (in this case, `347a6416af66`).
+```
+➜  Glovecoin git:(master) ✗ docker run -d glovecoind:v1.0.0
+46ecdf76b5b7ead9271ba5f313b03f2cf8002489f11c1de17e495767da3adebf
+```
+
+This runs the binary, `Glovecoind`, with no command arguments.
+
+`-d`: daemonize the container. Run `docker logs 347a6416af66 -f` to tail the standard output.
+
+`-v`: persist the data in your host machine. Example: `docker run -d -v $(pwd)/docker/data:/root/.Glovecoin/ glovecoind:v1.0.0	`
